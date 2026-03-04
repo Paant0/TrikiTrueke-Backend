@@ -7,7 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class TrikiTruekeBackEndApplication {
 
 	public static void main(String[] args) {
+
+		System.out.println("hola sople");
 		SpringApplication.run(TrikiTruekeBackEndApplication.class, args);
 	}
+
 
 }
