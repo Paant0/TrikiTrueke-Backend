@@ -8,6 +8,7 @@ class TrikiTruekeBackEndApplicationTests {
 
 	@Test
 	void contextLoads() {
+
 	}
 
 }
