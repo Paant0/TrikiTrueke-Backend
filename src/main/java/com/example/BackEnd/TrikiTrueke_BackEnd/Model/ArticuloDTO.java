@@ -1,17 +1,13 @@
+package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "usuarios")
-public class Usuario {
+@Document(collection = "Articulos")
+public class ArticuloDTO {
     @Id
     private String id;
     private String titulo;
-    private String
-    private String
-    private String
-    private String
-    private String
-    private String
 
 
 
