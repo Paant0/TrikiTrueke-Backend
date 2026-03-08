@@ -1,29 +1,33 @@
+package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "usuarios")
-public class Usuario {
+import java.util.Date;
+
+@Document(collection = "Usuarios")
+public class UsuarioDTO {
     @Id
     private String id;
     private String nombre;
-    private String contraseña;
+    private String clave;
     private String email;
     private String tel;
-    private Date creaadoEn;
+    private Date creadoEn;
     // Getters y Setters
 
 
-    public Usuario() {
+    public UsuarioDTO() {
     }
 
     // 🔹 Constructor parametrizado
-    public Usuario(String id, String nombre, String contraseña, String email, String tel, Date creaadoEn) {
+    public UsuarioDTO(String id, String nombre, String clave, String email, String tel, Date creadoEn) {
         this.id = id;
         this.nombre = nombre;
-        this.contraseña = contraseña;
+        this.clave = clave;
         this.email = email;
         this.tel = tel;
-        this.creaadoEn = creaadoEn;
+        this.creadoEn = creadoEn;
     }
 
     public String getId() {
@@ -43,11 +47,11 @@ public class Usuario {
     }
 
     public String getContraseña() {
-        return contraseña;
+        return clave;
     }
 
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContraseña(String clave) {
+        this.clave = clave;
     }
 
     public String getEmail() {
@@ -67,14 +71,12 @@ public class Usuario {
     }
 
     public Date getCreaadoEn() {
-        return creaadoEn;
+        return creadoEn;
     }
 
-    public void setCreaadoEn(Date creaadoEn) {
-        this.creaadoEn = creaadoEn;
+    public void setCreaadoEn(Date creadoEn) {
+        this.creadoEn = creadoEn;
     }
 
 
-}
-    }
 }
