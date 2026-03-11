@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/ArticuloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/ArticuloDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/CategoriaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/CategoriaDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MikeHem2"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Paant0/TrikiTrueke-Backend.git",
+    "accountId": "d145cb8e-a41b-4f74-b5a5-6792ec372bb8"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -56,7 +69,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/kevin/Documents/BackendTrikiTrueke/TrikiTrueke-Backend",
+    "last_opened_file_path": "K:/Workspace/TrikiTrueke-Backend/pom.xml",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -76,6 +89,17 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="TrikiTrueke-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="TrikiTrueke-Backend" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
     <configuration name="TrikiTrueke" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TrikiTrueke-BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.BackEnd.TrikiTrueke_BackEnd.TrikiTruekeBackEndApplication" />
@@ -88,6 +112,7 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
@@ -100,6 +125,7 @@
       <updated>1772660076760</updated>
       <workItem from="1772660078478" duration="1459000" />
       <workItem from="1772676044594" duration="2050000" />
+      <workItem from="1773262678024" duration="1079000" />
     </task>
     <servers />
   </component>
