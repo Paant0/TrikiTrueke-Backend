@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/ArticulosDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/CategoriasDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/IntercambiosDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/UsuariosDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,9 +53,10 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.TrikiTrueke.executor": "Run",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "K:/Workspace/TrikiTrueke-Backend/pom.xml",
+    "last_opened_file_path": "C:/Users/kevin/Documents/BackendTrikiTrueke/TrikiTrueke-Backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -82,17 +76,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="TrikiTrueke-Backend" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="TrikiTrueke-Backend" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
     <configuration name="TrikiTrueke" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TrikiTrueke-BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.BackEnd.TrikiTrueke_BackEnd.TrikiTruekeBackEndApplication" />
@@ -105,7 +88,6 @@
     <attachedChunks>
       <set>
         <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
       </set>
     </attachedChunks>
   </component>
