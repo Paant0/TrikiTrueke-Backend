@@ -5,15 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/ArticulosDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/CategoriasDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/IntercambiosDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Model/UsuariosDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/ArticuloDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/ArticuloDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/CategoriaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/CategoriaDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +20,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "MikeHem2"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Paant0/TrikiTrueke-Backend.git",
+    "accountId": "d145cb8e-a41b-4f74-b5a5-6792ec372bb8"
+  }
+}]]></component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -60,6 +66,7 @@
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "Spring Boot.TrikiTrueke.executor": "Run",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "K:/Workspace/TrikiTrueke-Backend/pom.xml",
@@ -118,6 +125,7 @@
       <updated>1772660076760</updated>
       <workItem from="1772660078478" duration="1459000" />
       <workItem from="1772676044594" duration="2050000" />
+      <workItem from="1773262678024" duration="1079000" />
     </task>
     <servers />
   </component>
