@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="Conexión a Usuarios">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2026_10_49a_m___Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2026_10_49 a_ m__[Changes]1/shelved.patch" beforeDir="false" />
+    <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="Limpieza de Main Class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +143,7 @@
       <workItem from="1773762226020" duration="1863000" />
       <workItem from="1773867448778" duration="2889000" />
       <workItem from="1774365709268" duration="1210000" />
-      <workItem from="1774367077006" duration="94000" />
+      <workItem from="1774367077006" duration="3137000" />
     </task>
     <task id="LOCAL-00001" summary="Conexión a Usuarios">
       <option name="closed" value="true" />
@@ -162,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1773871350078</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Limpieza de Main Class">
+      <option name="closed" value="true" />
+      <created>1774367443233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774367443233</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -181,7 +188,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Conexión a Usuarios" />
-    <option name="LAST_COMMIT_MESSAGE" value="Conexión a Usuarios" />
+    <MESSAGE value="Limpieza de Main Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpieza de Main Class" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
