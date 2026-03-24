@@ -4,55 +4,47 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ad2e7dd-9122-47e0-aeb5-cae6fd927e8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Controller/IntercambioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Repository/IntercambioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Service/IntercambioService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2026_10_49a_m___Changes_1.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_03_2026_10_49 a_ m__[Changes]1/shelved.patch" beforeDir="false" />
+    <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="Limpieza de Main Class">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/IntercambioDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Model/Intercambio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="30" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Paant0"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;MikeHem2&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Paant0/TrikiTrueke-Backend",
-    "accountId": "75b221e6-56d0-4798-9dd6-644fe1e057fb"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Paant0/TrikiTrueke-Backend.git&quot;,
+    &quot;accountId&quot;: &quot;da9eeea2-412b-412e-a977-42c70932f326&quot;
+  },
+  &quot;recentNewPullRequestHead&quot;: {
+    &quot;server&quot;: {
+      &quot;useHttp&quot;: false,
+      &quot;host&quot;: &quot;github.com&quot;,
+      &quot;port&quot;: null,
+      &quot;suffix&quot;: null
+    },
+    &quot;owner&quot;: &quot;Paant0&quot;,
+    &quot;repository&quot;: &quot;TrikiTrueke-Backend&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="customMavenHome" value="C:\Program Files\Apache\apache-maven-3.9.12" />
-        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
-        <option name="userSettingsFile" value="C:\Program Files\Apache\apache-maven-3.9.12\conf\settings.xml" />
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
   </component>
@@ -60,73 +52,147 @@
     <commands />
     <urls />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
-  <component name="ProjectId" id="3BMdQjVCMxbfdtZKuwN0ZYpjwt2" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="3AUvgbP855MeSwI35GjVq1P73iw" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_MARK_IGNORED_FILES_AS_EXCLUDED": "true",
+    "JUnit.TrikiTruekeBackEndApplicationTests.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "Spring Boot.TrikiTruekeBackEndApplication (1).executor": "Run",
-    "Spring Boot.TrikiTruekeBackEndApplication.executor": "Run",
-    "Spring Boot.Unnamed.executor": "Run",
-    "git-widget-placeholder": "dev-HervinElLindo",
+    "Spring Boot.TrikiTrueke.executor": "Run",
+    "git-widget-placeholder": "dev-LenKid",
+    "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "K:/Workspace/TrikiTrueke-Backend/pom.xml",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "MavenSettings",
+    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mongo"
+    ]
   }
 }]]></component>
-  <component name="RunManager" selected="Spring Boot.TrikiTruekeBackEndApplication">
-    <configuration name="TrikiTruekeBackEndApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="K:\Workspace\TrikiTrueke-Backend\src\test\java\com\example\BackEnd\TrikiTrueke_BackEnd" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="K:\Workspace\TrikiTrueke-Backend\src\main\java\com\example\BackEnd\TrikiTrueke_BackEnd" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="TrikiTrueke-Backend" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="TrikiTrueke-Backend" />
+      <option name="filePath" />
+      <method v="2" />
+    </configuration>
+    <configuration name="TrikiTrueke" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="TrikiTrueke-BackEnd" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.BackEnd.TrikiTrueke_BackEnd.TrikiTruekeBackEndApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <list>
-      <item itemvalue="Spring Boot.TrikiTruekeBackEndApplication" />
-      <item itemvalue="Spring Boot.TrikiTruekeBackEndApplication (1)" />
-    </list>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.31033.145" />
-        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.31033.145" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="5ad2e7dd-9122-47e0-aeb5-cae6fd927e8a" name="Changes" comment="" />
-      <created>1774302861789</created>
+      <changelist id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="" />
+      <created>1772660076760</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1774302861789</updated>
-      <workItem from="1774302865131" duration="1411000" />
+      <updated>1772660076760</updated>
+      <workItem from="1772660078478" duration="1459000" />
+      <workItem from="1772676044594" duration="2050000" />
+      <workItem from="1773262678024" duration="1079000" />
+      <workItem from="1773685773637" duration="1859000" />
+      <workItem from="1773762226020" duration="1863000" />
+      <workItem from="1773867448778" duration="2889000" />
+      <workItem from="1774365709268" duration="1210000" />
+      <workItem from="1774367077006" duration="3137000" />
     </task>
+    <task id="LOCAL-00001" summary="Conexión a Usuarios">
+      <option name="closed" value="true" />
+      <created>1773871341003</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773871341003</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Conexión a Usuarios">
+      <option name="closed" value="true" />
+      <created>1773871350078</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773871350078</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Limpieza de Main Class">
+      <option name="closed" value="true" />
+      <created>1774367443233</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774367443233</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Conexión a Usuarios" />
+    <MESSAGE value="Limpieza de Main Class" />
+    <option name="LAST_COMMIT_MESSAGE" value="Limpieza de Main Class" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
