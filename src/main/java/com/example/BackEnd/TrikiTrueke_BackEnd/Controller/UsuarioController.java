@@ -2,6 +2,7 @@ package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Service.UsuarioService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +29,7 @@ public class UsuarioController {
 
     @PostMapping
     public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO newUsuario) {
-        return ResponseEntity.ok(usuarioService.createUsuario(newUsuario));
+        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.createUsuario(newUsuario));
     }
 
     @PostMapping("/login")
