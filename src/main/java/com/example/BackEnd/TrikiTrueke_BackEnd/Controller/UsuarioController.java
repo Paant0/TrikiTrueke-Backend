@@ -1,5 +1,6 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.LoginRequest;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Service.UsuarioService;
 import org.springframework.http.HttpStatus;
@@ -33,7 +34,7 @@ public class UsuarioController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UsuarioDTO> validarLogin(@RequestBody UsuarioDTO credentials) {
+    public ResponseEntity<UsuarioDTO> validarLogin(@RequestBody LoginRequest credentials) {
         return ResponseEntity.ok(
                 usuarioService.validarLogin(credentials.getEmail(), credentials.getClave())
         );
