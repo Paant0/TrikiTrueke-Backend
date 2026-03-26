@@ -52,9 +52,7 @@ public class UsuarioService {
             throw new ResponseStatusException(HttpStatus.CONFLICT, "Telefono ya registrado: " + newUsuario.getTelefono());
         }
         newUsuario.setClave(passwordEncoder.encode(newUsuario.getClave()));
-        if (newUsuario.getCreadoEn() == null) {
-            newUsuario.setCreadoEn(new Date());
-        }
+        newUsuario.setCreadoEn(new Date());
         return usuarioRepository.save(newUsuario);
     }
 
