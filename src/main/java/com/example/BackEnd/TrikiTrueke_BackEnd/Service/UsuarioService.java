@@ -2,6 +2,7 @@ package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
 
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.UsuarioRepository;
+import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
@@ -53,7 +54,14 @@ public class UsuarioService {
         }
         newUsuario.setClave(passwordEncoder.encode(newUsuario.getClave()));
         newUsuario.setCreadoEn(new Date());
-        return usuarioRepository.save(newUsuario);
+        try {
+            return usuarioRepository.save(newUsuario);
+        } catch (DuplicateKeyException e) {
+            String msg = e.getMessage() != null && e.getMessage().contains("email")
+                    ? "Email ya registrado: " + newUsuario.getEmail()
+                    : "Telefono ya registrado: " + newUsuario.getTelefono();
+            throw new ResponseStatusException(HttpStatus.CONFLICT, msg);
+        }
     }
 
     public UsuarioDTO validarLogin(String email, String clave) {
