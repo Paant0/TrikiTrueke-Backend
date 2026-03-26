@@ -68,7 +68,6 @@ public class UsuarioService {
         if (!passwordEncoder.matches(clave, usuario.getClave())) {
             throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales invalidas");
         }
-        usuario.setClave(null);
         return usuario;
     }
 }
