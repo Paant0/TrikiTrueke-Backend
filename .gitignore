@@ -1,4 +1,6 @@
 target/
+*.class
+.ai/
 pom.xml.tag
 pom.xml.releaseBackup
 pom.xml.versionsBackup
@@ -15,3 +17,8 @@ buildNumber.properties
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+# IntelliJ IDEA local/machine-specific files
+.idea/dataSources.local.xml
+.idea/dataSources/**
+.idea/workspace.xml

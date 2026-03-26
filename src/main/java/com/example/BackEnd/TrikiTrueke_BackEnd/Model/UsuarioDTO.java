@@ -1,6 +1,8 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -10,23 +12,23 @@ public class UsuarioDTO {
     @Id
     private String id;
     private String nombre;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String clave;
+    @Indexed(unique = true)
     private String email;
-    private String tel;
+    @Indexed(unique = true)
+    private String telefono;
     private Date creadoEn;
-    // Getters y Setters
-
 
     public UsuarioDTO() {
     }
 
-    // 🔹 Constructor parametrizado
-    public UsuarioDTO(String id, String nombre, String clave, String email, String tel, Date creadoEn) {
+    public UsuarioDTO(String id, String nombre, String clave, String email, String telefono, Date creadoEn) {
         this.id = id;
         this.nombre = nombre;
         this.clave = clave;
         this.email = email;
-        this.tel = tel;
+        this.telefono = telefono;
         this.creadoEn = creadoEn;
     }
 
@@ -46,11 +48,11 @@ public class UsuarioDTO {
         this.nombre = nombre;
     }
 
-    public String getContraseña() {
+    public String getClave() {
         return clave;
     }
 
-    public void setContraseña(String clave) {
+    public void setClave(String clave) {
         this.clave = clave;
     }
 
@@ -62,21 +64,19 @@ public class UsuarioDTO {
         this.email = email;
     }
 
-    public String getTel() {
-        return tel;
+    public String getTelefono() {
+        return telefono;
     }
 
-    public void setTel(String tel) {
-        this.tel = tel;
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
     }
 
-    public Date getCreaadoEn() {
+    public Date getCreadoEn() {
         return creadoEn;
     }
 
-    public void setCreaadoEn(Date creadoEn) {
+    public void setCreadoEn(Date creadoEn) {
         this.creadoEn = creadoEn;
     }
-
-
 }
