@@ -3,10 +3,7 @@ package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Service.UsuarioService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -28,5 +25,16 @@ public class UsuarioController {
     public ResponseEntity<UsuarioDTO> getUsuarioById(@PathVariable String id) {
         return ResponseEntity.ok(usuarioService.getUsuarioById(id));
     }
-}
 
+    @PostMapping
+    public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO newUsuario) {
+        return ResponseEntity.ok(usuarioService.createUsuario(newUsuario));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<UsuarioDTO> validarLogin(@RequestBody UsuarioDTO credentials) {
+        return ResponseEntity.ok(
+                usuarioService.validarLogin(credentials.getEmail(), credentials.getClave())
+        );
+    }
+}
