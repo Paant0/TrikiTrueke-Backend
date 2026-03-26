@@ -216,8 +216,8 @@ En Windows PowerShell:
 - La clase principal imprime informacion de arranque y de conexion a MongoDB en consola.
 - El sistema esta orientado a documentos Mongo por coleccion.
 - No hay autenticacion ni autorizacion implementadas.
-- No hay operaciones de creacion, actualizacion o eliminacion expuestas por API.
-- No hay manejo global de excepciones.
+- Se exponen operaciones de creacion, lectura, actualizacion y eliminacion (CRUD) para usuarios, articulos e intercambios a traves de la API.
+- Existe manejo global de excepciones centralizado en una clase de tipo `GlobalExceptionHandler`.
 - No hay separacion entre entidades persistidas y DTOs de respuesta.
 
 ## Proxima evolucion recomendada
