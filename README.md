@@ -47,7 +47,7 @@ En otras palabras, el repositorio ya expresa la idea del sistema, pero todavia n
 ## Stack tecnologico
 
 - `Java 25`
-- `Spring Boot 4.0.3`
+- `Spring Boot 4.0.5`
 - `Spring Web`
 - `Spring Data MongoDB`
 - `MongoDB`
