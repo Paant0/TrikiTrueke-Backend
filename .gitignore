@@ -1,4 +1,5 @@
 target/
+*.class
 .ai/
 pom.xml.tag
 pom.xml.releaseBackup
