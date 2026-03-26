@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="Limpieza de Main Class">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_03_2026_5_10_p_m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_18_03_2026_5_10_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+    <list default="true" id="c593538d-d65c-4b0b-9e80-51055d5b734d" name="Changes" comment="Manejo de excepciones">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Controller/UsuarioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Repository/UsuarioRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/Service/UsuarioService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="40" />
+    <option name="cachedIndexableFilesCount" value="41" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -72,6 +64,9 @@
     <commands />
     <urls />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -108,7 +103,8 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.LLMThirdPartyAiProvidersConfigurable",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -168,7 +164,7 @@
       <workItem from="1773867448778" duration="2889000" />
       <workItem from="1774365709268" duration="1210000" />
       <workItem from="1774367077006" duration="3137000" />
-      <workItem from="1774553020197" duration="2220000" />
+      <workItem from="1774553020197" duration="3339000" />
     </task>
     <task id="LOCAL-00001" summary="Conexión a Usuarios">
       <option name="closed" value="true" />
@@ -194,7 +190,23 @@
       <option name="project" value="LOCAL" />
       <updated>1774367443233</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Registro Y Validación de Usuarios">
+      <option name="closed" value="true" />
+      <created>1774555295921</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774555295921</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Manejo de excepciones">
+      <option name="closed" value="true" />
+      <created>1774555333606</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1774555333606</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,7 +226,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Conexión a Usuarios" />
     <MESSAGE value="Limpieza de Main Class" />
-    <option name="LAST_COMMIT_MESSAGE" value="Limpieza de Main Class" />
+    <MESSAGE value="Registro Y Validación de Usuarios" />
+    <MESSAGE value="Manejo de excepciones" />
+    <option name="LAST_COMMIT_MESSAGE" value="Manejo de excepciones" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
