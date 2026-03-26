@@ -1,6 +1,8 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.Date;
@@ -11,7 +13,9 @@ public class UsuarioDTO {
     private String id;
     private String nombre;
     private String clave;
+    @Indexed(unique = true)
     private String email;
+    @Indexed(unique = true)
     private String telefono;
     private Date creadoEn;
 
@@ -43,6 +47,7 @@ public class UsuarioDTO {
         this.nombre = nombre;
     }
 
+    @JsonIgnore
     public String getClave() {
         return clave;
     }
