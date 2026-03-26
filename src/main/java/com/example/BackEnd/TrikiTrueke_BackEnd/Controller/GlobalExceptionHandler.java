@@ -19,7 +19,12 @@ public class GlobalExceptionHandler {
             HttpServletRequest request
     ) {
         int status = ex.getStatusCode().value();
-        String error = HttpStatus.valueOf(status).getReasonPhrase();
+        String error;
+        if (ex.getStatusCode() instanceof HttpStatus) {
+            error = ((HttpStatus) ex.getStatusCode()).getReasonPhrase();
+        } else {
+            error = "Unknown Status";
+        }
         String message = ex.getReason();
         if (message == null || message.isBlank()) {
             message = "Error inesperado";
