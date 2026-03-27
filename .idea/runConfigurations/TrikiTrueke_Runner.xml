@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="TrikiTrueke Runner" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <module name="TrikiTrueke-BackEnd" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.BackEnd.TrikiTrueke_BackEnd.TrikiTruekeBackEndApplication" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

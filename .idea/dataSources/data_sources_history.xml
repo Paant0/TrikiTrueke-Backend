@@ -13,7 +13,6 @@
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
-      <auth-provider>no-auth</auth-provider>
       <schema-mapping>
         <introspection-scope>
           <node kind="schema" qname="@" />
@@ -24,8 +23,7 @@
   </DataSourceFromHistory>
   <DataSourceFromHistory isRemovedFromProject="false">
     <data-source source="LOCAL" name="mongodb@localhost" uuid="eeddc3c6-48a3-477d-b0cd-1367e4719af3">
-      <database-info product="Mongo DB" version="8.2.5" jdbc-version="4.2" driver-name="MongoDB JDBC Driver" driver-version="1.20" dbms="MONGO" exact-version="8.2.5" exact-driver-version="1.20" />
-      <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed" />
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="MONGO" />
       <driver-ref>mongo.4</driver-ref>
       <synchronize>true</synchronize>
       <imported>true</imported>
@@ -36,7 +34,6 @@
         <property name="com.intellij.clouds.kubernetes.db.enabled" value="false" />
         <property name="com.intellij.clouds.kubernetes.db.container.port" />
       </jdbc-additional-properties>
-      <auth-provider>no-auth</auth-provider>
       <schema-mapping />
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
