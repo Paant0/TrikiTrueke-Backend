@@ -10,16 +10,16 @@ public class IntercambioDTO {
     @Id
     private String id;
     private String estado;
-    private ArticuloDTO articuloOfrecido;
-    private ArticuloDTO articuloRecibido;
-    private UsuarioDTO usuarioOfrece;
-    private UsuarioDTO usuarioRecibe;
+    private String articuloOfrecido;
+    private String articuloRecibido;
+    private String usuarioOfrece;
+    private String usuarioRecibe;
     private Date creadoEn;
 
     public IntercambioDTO() {
     }
 
-    public IntercambioDTO(String id, String estado, ArticuloDTO articuloOfrecido, ArticuloDTO articuloRecibido, UsuarioDTO usuarioOfrece, UsuarioDTO usuarioRecibe, Date creadoEn) {
+    public IntercambioDTO(String id, String estado, String articuloOfrecido, String articuloRecibido, String usuarioOfrece, String usuarioRecibe, Date creadoEn) {
         this.id = id;
         this.estado = estado;
         this.articuloOfrecido = articuloOfrecido;
@@ -45,35 +45,35 @@ public class IntercambioDTO {
         this.estado = estado;
     }
 
-    public ArticuloDTO getArticuloOfrecido() {
+    public String getArticuloOfrecido() {
         return articuloOfrecido;
     }
 
-    public void setArticuloOfrecido(ArticuloDTO articuloOfrecido) {
+    public void setArticuloOfrecido(String articuloOfrecido) {
         this.articuloOfrecido = articuloOfrecido;
     }
 
-    public ArticuloDTO getArticuloRecibido() {
+    public String getArticuloRecibido() {
         return articuloRecibido;
     }
 
-    public void setArticuloRecibido(ArticuloDTO articuloRecibido) {
+    public void setArticuloRecibido(String articuloRecibido) {
         this.articuloRecibido = articuloRecibido;
     }
 
-    public UsuarioDTO getUsuarioOfrece() {
+    public String getUsuarioOfrece() {
         return usuarioOfrece;
     }
 
-    public void setUsuarioOfrece(UsuarioDTO usuarioOfrece) {
+    public void setUsuarioOfrece(String usuarioOfrece) {
         this.usuarioOfrece = usuarioOfrece;
     }
 
-    public UsuarioDTO getUsuarioRecibe() {
+    public String getUsuarioRecibe() {
         return usuarioRecibe;
     }
 
-    public void setUsuarioRecibe(UsuarioDTO usuarioRecibe) {
+    public void setUsuarioRecibe(String usuarioRecibe) {
         this.usuarioRecibe = usuarioRecibe;
     }
 
