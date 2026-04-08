@@ -47,7 +47,7 @@ En otras palabras, el repositorio ya expresa la idea del sistema, pero todavia n
 ## Stack tecnologico
 
 - `Java 25`
-- `Spring Boot 4.0.3`
+- `Spring Boot 4.0.5`
 - `Spring Web`
 - `Spring Data MongoDB`
 - `MongoDB`
@@ -76,18 +76,45 @@ src/
 
 #### `src/main/java/.../Controller`
 
-Contiene la capa de entrada HTTP. Actualmente solo existe `UsuarioController`, que expone:
+Contiene la capa de entrada HTTP. Actualmente existen tres controladores:
 
-- `GET /usuarios`
-- `GET /usuarios/{id}`
+- `UsuarioController`: expone operaciones sobre usuarios.
+  - `GET /usuarios`
+  - `GET /usuarios/{id}`
+  - `POST /usuarios`
+  - `POST /usuarios/login`
+
+- `ArticuloController`: expone operaciones CRUD sobre articulos.
+  - `GET /articulos`
+  - `GET /articulos/{id}`
+  - `POST /articulos`
+  - `PUT /articulos/{id}`
+  - `DELETE /articulos/{id}`
+
+- `IntercambioController`: expone operaciones CRUD sobre intercambios.
+  - `GET /intercambios`
+  - `GET /intercambios/{id}`
+  - `POST /intercambios`
+  - `PUT /intercambios/{id}`
+  - `DELETE /intercambios/{id}`
+
+Ademas, existe `GlobalExceptionHandler` que centraliza el manejo de excepciones HTTP.
 
 #### `src/main/java/.../Service`
 
-Contiene la logica de aplicacion. `UsuarioService` consulta el repositorio y resuelve el caso de usuario inexistente con respuesta `404 Not Found`.
+Contiene la logica de aplicacion:
+
+- `UsuarioService`: gestiona registro, consulta y login de usuarios (con hash de contrasena via BCrypt).
+- `ArticuloService`: gestiona la creacion, consulta, actualizacion y eliminacion de articulos.
+- `IntercambioService`: gestiona la creacion, consulta, actualizacion y eliminacion de intercambios.
 
 #### `src/main/java/.../Repository`
 
-Contiene la integracion con MongoDB. `UsuarioRepository` extiende `MongoRepository<UsuarioDTO, String>`, por lo que hereda operaciones de lectura y persistencia sin implementar consultas manuales.
+Contiene la integracion con MongoDB. Cada repositorio extiende `MongoRepository` y hereda operaciones de lectura y persistencia sin implementar consultas manuales:
+
+- `UsuarioRepository`
+- `ArticuloRepository`
+- `IntercambioRepository`
 
 #### `src/main/java/.../Model`
 
@@ -112,28 +139,38 @@ Incluye la configuracion principal de la aplicacion:
 
 Incluye una prueba minima de carga de contexto (`contextLoads`). Sirve para validar que la aplicacion arranca, pero todavia no cubre endpoints, servicios ni repositorios.
 
-## Funcionalidad implementada hoy
+## Funcionalidad implementada
 
 ### Endpoints disponibles
 
-#### Obtener todos los usuarios
+#### Usuarios
 
-```http
-GET /usuarios
-```
+| Metodo | Ruta | Descripcion |
+|--------|------|-------------|
+| `GET` | `/usuarios` | Obtener todos los usuarios |
+| `GET` | `/usuarios/{id}` | Obtener un usuario por id (`404` si no existe) |
+| `POST` | `/usuarios` | Crear un nuevo usuario (`201 Created`) |
+| `POST` | `/usuarios/login` | Validar credenciales de login (`401` si invalidas) |
 
-Respuesta esperada: lista de documentos `UsuarioDTO`.
+#### Articulos
 
-#### Obtener un usuario por id
+| Metodo | Ruta | Descripcion |
+|--------|------|-------------|
+| `GET` | `/articulos` | Obtener todos los articulos |
+| `GET` | `/articulos/{id}` | Obtener un articulo por id |
+| `POST` | `/articulos` | Crear un nuevo articulo |
+| `PUT` | `/articulos/{id}` | Actualizar un articulo existente |
+| `DELETE` | `/articulos/{id}` | Eliminar un articulo |
 
-```http
-GET /usuarios/{id}
-```
+#### Intercambios
 
-Respuesta esperada:
-
-- `200 OK` si el usuario existe.
-- `404 Not Found` si el id no se encuentra en MongoDB.
+| Metodo | Ruta | Descripcion |
+|--------|------|-------------|
+| `GET` | `/intercambios` | Obtener todos los intercambios |
+| `GET` | `/intercambios/{id}` | Obtener un intercambio por id |
+| `POST` | `/intercambios` | Crear un nuevo intercambio |
+| `PUT` | `/intercambios/{id}` | Actualizar un intercambio existente |
+| `DELETE` | `/intercambios/{id}` | Eliminar un intercambio |
 
 ## Modelo de datos identificado
 
@@ -216,13 +253,13 @@ En Windows PowerShell:
 - La clase principal imprime informacion de arranque y de conexion a MongoDB en consola.
 - El sistema esta orientado a documentos Mongo por coleccion.
 - No hay autenticacion ni autorizacion implementadas.
-- No hay operaciones de creacion, actualizacion o eliminacion expuestas por API.
-- No hay manejo global de excepciones.
+- Se exponen operaciones de creacion, lectura, actualizacion y eliminacion (CRUD) para usuarios, articulos e intercambios a traves de la API.
+- Existe manejo global de excepciones centralizado en una clase de tipo `GlobalExceptionHandler`.
 - No hay separacion entre entidades persistidas y DTOs de respuesta.
 
 ## Proxima evolucion recomendada
 
-- Crear controladores, servicios y repositorios para `Articulos`, `Categorias` e `Intercambios`.
+- Crear controladores, servicios y repositorios para `Categorias`.
 - Incorporar validaciones de entrada con Bean Validation.
 - Separar entidades de persistencia y DTOs de API.
 - Agregar pruebas unitarias e integracion para endpoints y acceso a datos.
