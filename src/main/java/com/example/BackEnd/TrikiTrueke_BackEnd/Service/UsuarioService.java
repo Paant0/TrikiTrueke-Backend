@@ -78,4 +78,42 @@ public class UsuarioService {
         }
         return usuario;
     }
+
+    public UsuarioDTO updateUsuario(String id, UsuarioDTO usuarioActualizado) {
+        UsuarioDTO usuarioExistente = usuarioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado: " + id));
+
+        if (usuarioActualizado.getNombre() != null && !usuarioActualizado.getNombre().isBlank()) {
+            usuarioExistente.setNombre(usuarioActualizado.getNombre());
+        }
+
+        if (usuarioActualizado.getEmail() != null && !usuarioActualizado.getEmail().isBlank()) {
+            if (!usuarioExistente.getEmail().equals(usuarioActualizado.getEmail())
+                    && usuarioRepository.existsByEmail(usuarioActualizado.getEmail())) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Email ya registrado: " + usuarioActualizado.getEmail());
+            }
+            usuarioExistente.setEmail(usuarioActualizado.getEmail());
+        }
+
+        if (usuarioActualizado.getTelefono() != null && !usuarioActualizado.getTelefono().isBlank()) {
+            if (!usuarioExistente.getTelefono().equals(usuarioActualizado.getTelefono())
+                    && usuarioRepository.existsByTelefono(usuarioActualizado.getTelefono())) {
+                throw new ResponseStatusException(HttpStatus.CONFLICT, "Telefono ya registrado: " + usuarioActualizado.getTelefono());
+            }
+            usuarioExistente.setTelefono(usuarioActualizado.getTelefono());
+        }
+
+        if (usuarioActualizado.getClave() != null && !usuarioActualizado.getClave().isBlank()) {
+            usuarioExistente.setClave(passwordEncoder.encode(usuarioActualizado.getClave()));
+        }
+
+        return usuarioRepository.save(usuarioExistente);
+    }
+
+    public void deleteUsuario(String id) {
+        UsuarioDTO usuario = usuarioRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado: " + id));
+
+        usuarioRepository.delete(usuario);
+    }
 }

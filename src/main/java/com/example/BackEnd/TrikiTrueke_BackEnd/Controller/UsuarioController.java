@@ -39,4 +39,15 @@ public class UsuarioController {
                 usuarioService.validarLogin(credentials.getEmail(), credentials.getClave())
         );
     }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<UsuarioDTO> updateUsuario(@PathVariable String id, @RequestBody UsuarioDTO usuarioActualizado) {
+        return ResponseEntity.ok(usuarioService.updateUsuario(id, usuarioActualizado));
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteUsuario(@PathVariable String id) {
+        usuarioService.deleteUsuario(id);
+        return ResponseEntity.noContent().build();
+    }
 }

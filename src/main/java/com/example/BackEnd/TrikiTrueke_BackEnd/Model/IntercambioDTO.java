@@ -1,5 +1,6 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -10,16 +11,16 @@ public class IntercambioDTO {
     @Id
     private String id;
     private String estado;
-    private String articuloOfrecido;
-    private String articuloRecibido;
-    private String usuarioOfrece;
-    private String usuarioRecibe;
+    private ObjectId articuloOfrecido;
+    private ObjectId articuloRecibido;
+    private ObjectId usuarioOfrece;
+    private ObjectId usuarioRecibe;
     private Date creadoEn;
 
     public IntercambioDTO() {
     }
 
-    public IntercambioDTO(String id, String estado, String articuloOfrecido, String articuloRecibido, String usuarioOfrece, String usuarioRecibe, Date creadoEn) {
+    public IntercambioDTO(String id, String estado, ObjectId articuloOfrecido, ObjectId articuloRecibido, ObjectId usuarioOfrece, ObjectId usuarioRecibe, Date creadoEn) {
         this.id = id;
         this.estado = estado;
         this.articuloOfrecido = articuloOfrecido;
@@ -45,35 +46,35 @@ public class IntercambioDTO {
         this.estado = estado;
     }
 
-    public String getArticuloOfrecido() {
+    public ObjectId getArticuloOfrecido() {
         return articuloOfrecido;
     }
 
-    public void setArticuloOfrecido(String articuloOfrecido) {
+    public void setArticuloOfrecido(ObjectId articuloOfrecido) {
         this.articuloOfrecido = articuloOfrecido;
     }
 
-    public String getArticuloRecibido() {
+    public ObjectId getArticuloRecibido() {
         return articuloRecibido;
     }
 
-    public void setArticuloRecibido(String articuloRecibido) {
+    public void setArticuloRecibido(ObjectId articuloRecibido) {
         this.articuloRecibido = articuloRecibido;
     }
 
-    public String getUsuarioOfrece() {
+    public ObjectId getUsuarioOfrece() {
         return usuarioOfrece;
     }
 
-    public void setUsuarioOfrece(String usuarioOfrece) {
+    public void setUsuarioOfrece(ObjectId usuarioOfrece) {
         this.usuarioOfrece = usuarioOfrece;
     }
 
-    public String getUsuarioRecibe() {
+    public ObjectId getUsuarioRecibe() {
         return usuarioRecibe;
     }
 
-    public void setUsuarioRecibe(String usuarioRecibe) {
+    public void setUsuarioRecibe(ObjectId usuarioRecibe) {
         this.usuarioRecibe = usuarioRecibe;
     }
 
