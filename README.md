@@ -151,6 +151,8 @@ Incluye una prueba minima de carga de contexto (`contextLoads`). Sirve para vali
 | `GET` | `/usuarios/{id}` | Obtener un usuario por id (`404` si no existe) |
 | `POST` | `/usuarios` | Crear un nuevo usuario (`201 Created`) |
 | `POST` | `/usuarios/login` | Validar credenciales de login (`401` si invalidas) |
+| `PUT` | `/usuarios/{id}` | Actualizar un usuario existente |
+| `DELETE` | `/usuarios/{id}` | Eliminar un usuario |
 
 #### Articulos
 
