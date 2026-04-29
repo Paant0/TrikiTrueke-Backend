@@ -1,10 +1,8 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Service;
 
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ArticuloDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.CategoriaRepository;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.CategoriaRepository;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.http.HttpStatus;

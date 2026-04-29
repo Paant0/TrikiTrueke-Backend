@@ -1,4 +1,4 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

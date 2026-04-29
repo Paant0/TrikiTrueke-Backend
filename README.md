@@ -11,7 +11,7 @@ TrikiTrueke plantea un sistema de intercambio de objetos entre usuarios. Desde e
 - `Categorias`: clasificacion funcional de los articulos.
 - `Intercambios`: relacion de oferta y recepcion entre usuarios.
 
-Aunque el modelo de dominio ya contempla esas cuatro entidades, el estado actual del desarrollo esta concentrado en `Usuarios`, que es el unico modulo con flujo completo de `Controller -> Service -> Repository`.
+El modelo de dominio contempla esas cuatro entidades y actualmente ya existen flujos funcionales en `Usuarios`, `Articulos` e `Intercambios`.
 
 ## Clasificacion del sistema
 
@@ -40,13 +40,13 @@ El proyecto no esta terminado como plataforma de trueque completa. Su madurez ac
 
 - `Base funcional`: arranque del servidor, conexion a MongoDB y consulta de usuarios.
 - `Base de dominio definida`: existen modelos para articulos, categorias e intercambios.
-- `Implementacion parcial`: faltan controladores, servicios, repositorios y pruebas para la mayor parte del dominio.
+- `Implementacion funcional base`: existen controladores, servicios y repositorios para los dominios principales.
 
-En otras palabras, el repositorio ya expresa la idea del sistema, pero todavia no materializa todos sus casos de uso.
+En otras palabras, el repositorio ya materializa los casos de uso principales; la mayor brecha pendiente es cobertura de pruebas y endurecimiento de validaciones adicionales.
 
 ## Stack tecnologico
 
-- `Java 25`
+- `Java 21`
 - `Spring Boot 4.0.5`
 - `Spring Web`
 - `Spring Data MongoDB`
@@ -141,6 +141,23 @@ Incluye una prueba minima de carga de contexto (`contextLoads`). Sirve para vali
 
 ## Funcionalidad implementada
 
+### Trazabilidad de historias (revision funcional)
+
+Estado revisado sobre las historias definidas:
+
+| ID | Historia | Estado | Evidencia actual | Brecha vs criterio de aceptacion |
+|----|----------|--------|------------------|----------------------------------|
+| `1` | Como usuario nuevo quiero registrarme en la aplicacion | `Cumple` | Existe `POST /usuarios` y `POST /auth/register`, valida obligatorios, formato de email, duplicados y cifra clave con BCrypt | Sin brecha funcional para el criterio indicado |
+| `2` | Como usuario registrado quiero iniciar sesion | `Cumple` | Existe `POST /usuarios/login` y `POST /auth/login`, valida credenciales contra BD y compara hash con BCrypt | Sin brecha funcional para el criterio indicado |
+| `3` | Como usuario registrado quiero crear una solicitud de trueque | `Cumple` | `POST /intercambios` valida existencia/p pertenencia del articulo ofrecido al usuario que ofrece y asigna estado `PENDIENTE` | Sin brecha funcional para el criterio indicado |
+| `4` | Como usuario registrado quiero publicar un articulo | `Cumple` | `POST /articulos` valida `usuarioId`, valida existencia de usuario y asigna estado `DISPONIBLE` automaticamente | Sin brecha funcional para el criterio indicado |
+
+Notas tecnicas de la revision:
+
+- Registro y login: flujo principal implementado en `AuthController` (con compatibilidad en `UsuarioController`) y reglas en `UsuarioService`.
+- Solicitud de trueque: flujo implementado en `IntercambioController` + `IntercambioService`.
+- Publicacion de articulo: flujo implementado en `ArticuloController` + `ArticuloService`.
+
 ### Endpoints disponibles
 
 #### Usuarios
@@ -173,6 +190,15 @@ Incluye una prueba minima de carga de contexto (`contextLoads`). Sirve para vali
 | `POST` | `/intercambios` | Crear un nuevo intercambio |
 | `PUT` | `/intercambios/{id}` | Actualizar un intercambio existente |
 | `DELETE` | `/intercambios/{id}` | Eliminar un intercambio |
+
+#### Auth
+
+| Metodo | Ruta | Descripcion |
+|--------|------|-------------|
+| `POST` | `/auth/register` | Registrar usuario y crear cuenta |
+| `POST` | `/auth/login` | Iniciar sesion y crear `JSESSIONID` |
+| `POST` | `/auth/logout` | Cerrar sesion activa |
+| `GET` | `/auth/me` | Obtener usuario autenticado actual |
 
 ## Modelo de datos identificado
 
@@ -232,7 +258,7 @@ server.port=8080
 
 Para ejecutar el proyecto en local necesitas:
 
-1. Tener `Java 25` instalado.
+1. Tener `Java 21` instalado.
 2. Tener `MongoDB` corriendo en `localhost:27017`.
 3. Tener creada o disponible la base `TrikiTrueke`.
 
@@ -254,7 +280,7 @@ En Windows PowerShell:
 
 - La clase principal imprime informacion de arranque y de conexion a MongoDB en consola.
 - El sistema esta orientado a documentos Mongo por coleccion.
-- No hay autenticacion ni autorizacion implementadas.
+- Existe autenticacion por sesion (`JSESSIONID`) implementada con Spring Security.
 - Se exponen operaciones de creacion, lectura, actualizacion y eliminacion (CRUD) para usuarios, articulos e intercambios a traves de la API.
 - Existe manejo global de excepciones centralizado en una clase de tipo `GlobalExceptionHandler`.
 - No hay separacion entre entidades persistidas y DTOs de respuesta.
@@ -266,8 +292,8 @@ En Windows PowerShell:
 - Separar entidades de persistencia y DTOs de API.
 - Agregar pruebas unitarias e integracion para endpoints y acceso a datos.
 - Externalizar configuraciones sensibles por variables de entorno.
-- Definir autenticacion para proteger datos de usuario y operaciones de intercambio.
+- Agregar pruebas de integracion para el flujo de autenticacion (`register/login/logout/me`) y para reglas de negocio de articulos/intercambios.
 
 ## Conclusion
 
-TrikiTrueke Backend ya cuenta con una base tecnica coherente para crecer como API de una plataforma de trueque. Su principal fortaleza actual es la estructura por capas y la integracion inicial con MongoDB. Su principal limitacion es que el dominio esta modelado de forma parcial: la idea del sistema esta clara en las clases, pero la implementacion operativa aun esta centrada casi por completo en usuarios.
+TrikiTrueke Backend ya cuenta con una base tecnica coherente para crecer como API de una plataforma de trueque. Su principal fortaleza actual es la estructura por capas, la integracion con MongoDB y el flujo de autenticacion por sesion ya implementado. La principal brecha actual esta en la cobertura de pruebas.

@@ -1,4 +1,4 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd;
+package com.Example.BackEnd.TrikiTrueke_BackEnd;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
