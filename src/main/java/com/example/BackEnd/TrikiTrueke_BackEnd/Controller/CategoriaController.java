@@ -1,8 +1,7 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.IntercambioDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Service.CategoriaService;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Service.CategoriaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

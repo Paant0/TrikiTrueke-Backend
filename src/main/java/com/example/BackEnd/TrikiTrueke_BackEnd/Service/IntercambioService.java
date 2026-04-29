@@ -1,9 +1,9 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Service;
 
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.IntercambioDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ArticuloDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.ArticuloRepository;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.IntercambioRepository;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.IntercambioDTO;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.ArticuloDTO;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.ArticuloRepository;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.IntercambioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;

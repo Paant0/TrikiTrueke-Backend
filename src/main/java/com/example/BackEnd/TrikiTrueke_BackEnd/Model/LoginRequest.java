@@ -1,4 +1,4 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Model;
 
 public class LoginRequest {
     private String email;

@@ -1,20 +1,25 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Service;
 
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
-import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.UsuarioRepository;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.UsuarioRepository;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
-import org.springframework.security.crypto.password.PasswordEncoder;
 
-
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.regex.Pattern;
 
 @Service
-public class UsuarioService {
+public class UsuarioService implements UserDetailsService {
     private static final Pattern EMAIL_PATTERN =
             Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
 
@@ -125,5 +130,29 @@ public class UsuarioService {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado: " + id));
 
         usuarioRepository.delete(usuario);
+    }
+
+    @Override
+    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
+        UsuarioDTO usuario = usuarioRepository.findByEmail(email)
+                .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
+        return new UserPrincipal(usuario);
+    }
+
+    public record UserPrincipal(UsuarioDTO usuario) implements UserDetails {
+        @Override
+        public Collection<? extends GrantedAuthority> getAuthorities() {
+            return List.of(new SimpleGrantedAuthority("ROLE_USER"));
+        }
+
+        @Override
+        public String getPassword() {
+            return usuario.getClave();
+        }
+
+        @Override
+        public String getUsername() {
+            return usuario.getEmail();
+        }
     }
 }

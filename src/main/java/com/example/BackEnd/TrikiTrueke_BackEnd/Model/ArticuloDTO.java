@@ -1,4 +1,4 @@
-package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
+package com.Example.BackEnd.TrikiTrueke_BackEnd.Model;
 
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
