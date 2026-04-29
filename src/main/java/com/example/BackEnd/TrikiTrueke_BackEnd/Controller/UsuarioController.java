@@ -1,53 +1,32 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
-import com.example.BackEnd.TrikiTrueke_BackEnd.Model.LoginRequest;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Service.UsuarioService;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
-@RequestMapping("/usuarios")
+@RequestMapping("/api/auth")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UsuarioController {
-    private final UsuarioService usuarioService;
 
-    public UsuarioController(UsuarioService usuarioService) {
-        this.usuarioService = usuarioService;
+    @Autowired
+    private UsuarioService usuarioService;
+
+    // REGISTRO
+    @PostMapping("/register")
+    public UsuarioDTO register(@RequestBody UsuarioDTO usuario) {
+        return usuarioService.createUsuario(usuario);
     }
 
-    @GetMapping
-    public ResponseEntity<List<UsuarioDTO>> getUsuarios() {
-        return ResponseEntity.ok(usuarioService.getUsuarios());
-    }
-
-    @GetMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> getUsuarioById(@PathVariable String id) {
-        return ResponseEntity.ok(usuarioService.getUsuarioById(id));
-    }
-
-    @PostMapping
-    public ResponseEntity<UsuarioDTO> createUsuario(@RequestBody UsuarioDTO newUsuario) {
-        return ResponseEntity.status(HttpStatus.CREATED).body(usuarioService.createUsuario(newUsuario));
-    }
-
+    // LOGIN
     @PostMapping("/login")
-    public ResponseEntity<UsuarioDTO> validarLogin(@RequestBody LoginRequest credentials) {
-        return ResponseEntity.ok(
-                usuarioService.validarLogin(credentials.getEmail(), credentials.getClave())
+    public String login(@RequestBody UsuarioDTO usuario) {
+        usuarioService.validarLogin(
+                usuario.getEmail(),
+                usuario.getClave()
         );
-    }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<UsuarioDTO> updateUsuario(@PathVariable String id, @RequestBody UsuarioDTO usuarioActualizado) {
-        return ResponseEntity.ok(usuarioService.updateUsuario(id, usuarioActualizado));
-    }
-
-    @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteUsuario(@PathVariable String id) {
-        usuarioService.deleteUsuario(id);
-        return ResponseEntity.noContent().build();
+        return "Login exitoso";
     }
 }
