@@ -141,6 +141,23 @@ Incluye una prueba minima de carga de contexto (`contextLoads`). Sirve para vali
 
 ## Funcionalidad implementada
 
+### Trazabilidad de historias (revision funcional)
+
+Estado revisado sobre las historias definidas:
+
+| ID | Historia | Estado | Evidencia actual | Brecha vs criterio de aceptacion |
+|----|----------|--------|------------------|----------------------------------|
+| `1` | Como usuario nuevo quiero registrarme en la aplicacion | `Parcial` | Existe `POST /usuarios`, valida campos obligatorios, evita duplicados en `email` y `telefono`, y cifra clave con BCrypt | Falta validacion explicita de formato de correo (solo se valida que no venga vacio) |
+| `2` | Como usuario registrado quiero iniciar sesion | `Cumple` | Existe `POST /usuarios/login`, valida credenciales contra BD y compara hash con BCrypt | Sin brecha funcional para el criterio indicado |
+| `3` | Como usuario registrado quiero crear una solicitud de trueque | `No cumple completo` | Existe `POST /intercambios`, crea intercambio y asigna estado inicial | Falta validar que el articulo ofrecido pertenezca al usuario que ofrece. Ademas el estado se guarda como `pendiente` y el criterio solicita `PENDIENTE` |
+| `4` | Como usuario registrado quiero publicar un articulo | `No cumple completo` | Existe `POST /articulos` y guarda el articulo | Falta asignar estado `DISPONIBLE` de forma automatica y validar asociacion consistente con el usuario |
+
+Notas tecnicas de la revision:
+
+- Registro y login: flujo implementado en `UsuarioController` + `UsuarioService`.
+- Solicitud de trueque: flujo implementado en `IntercambioController` + `IntercambioService`.
+- Publicacion de articulo: flujo implementado en `ArticuloController` + `ArticuloService`.
+
 ### Endpoints disponibles
 
 #### Usuarios

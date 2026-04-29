@@ -11,9 +11,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Date;
 import java.util.List;
+import java.util.regex.Pattern;
 
 @Service
 public class UsuarioService {
+    private static final Pattern EMAIL_PATTERN =
+            Pattern.compile("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$");
+
     private final UsuarioRepository usuarioRepository;
     private final PasswordEncoder passwordEncoder;
 
@@ -39,6 +43,9 @@ public class UsuarioService {
     public UsuarioDTO createUsuario(UsuarioDTO newUsuario) {
         if (newUsuario.getEmail() == null || newUsuario.getEmail().isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email es obligatorio");
+        }
+        if (!EMAIL_PATTERN.matcher(newUsuario.getEmail()).matches()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Formato de email invalido");
         }
         if (newUsuario.getTelefono() == null || newUsuario.getTelefono().isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Telefono es obligatorio");
@@ -67,6 +74,9 @@ public class UsuarioService {
     public UsuarioDTO validarLogin(String email, String clave) {
         if (email == null || email.isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email es obligatorio");
+        }
+        if (!EMAIL_PATTERN.matcher(email).matches()) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Formato de email invalido");
         }
         if (clave == null || clave.isBlank()) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Clave es obligatoria");

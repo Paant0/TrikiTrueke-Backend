@@ -1,9 +1,13 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
 
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.IntercambioDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ArticuloDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.ArticuloRepository;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.IntercambioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.Date;
 import java.util.List;
@@ -14,11 +18,31 @@ public class IntercambioService {
 
     @Autowired
     private IntercambioRepository repository;
+    @Autowired
+    private ArticuloRepository articuloRepository;
 
     //Create
     public IntercambioDTO create(IntercambioDTO intercambioDTO) {
+        if (intercambioDTO.getArticuloOfrecido() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "articuloOfrecido es obligatorio");
+        }
+        if (intercambioDTO.getUsuarioOfrece() == null) {
+            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "usuarioOfrece es obligatorio");
+        }
+
+        ArticuloDTO articuloOfrecido = articuloRepository.findById(intercambioDTO.getArticuloOfrecido().toHexString())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "El articulo ofrecido no existe"));
+
+        if (articuloOfrecido.getUsuarioId() == null ||
+                !articuloOfrecido.getUsuarioId().equals(intercambioDTO.getUsuarioOfrece())) {
+            throw new ResponseStatusException(
+                    HttpStatus.BAD_REQUEST,
+                    "El articulo ofrecido no pertenece al usuario que ofrece el intercambio"
+            );
+        }
+
         intercambioDTO.setCreadoEn(new Date());
-        intercambioDTO.setEstado("pendiente");
+        intercambioDTO.setEstado("PENDIENTE");
         return repository.save(intercambioDTO);
     }
     //Get all
