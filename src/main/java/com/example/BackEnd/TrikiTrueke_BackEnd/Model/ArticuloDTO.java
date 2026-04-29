@@ -1,5 +1,6 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -13,8 +14,8 @@ public class ArticuloDTO {
     private String id;
     private String titulo;
     private String descripcion;
-    private String usuarioId;
-    private String categoriaId;
+    private ObjectId usuarioId;
+    private ObjectId categoriaId;
     private List<String> fotos;
     private String estado;
     private LocalDateTime creadoEn;
@@ -24,8 +25,8 @@ public class ArticuloDTO {
     }
 
     // Constructor con parámetros
-    public ArticuloDTO(String id, String titulo, String descripcion, String usuarioId,
-                       String categoriaId, List<String> fotos, String estado, LocalDateTime creadoEn) {
+
+    public ArticuloDTO(String id, String titulo, String descripcion, ObjectId usuarioId, ObjectId categoriaId, List<String> fotos, String estado, LocalDateTime creadoEn) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
@@ -62,19 +63,19 @@ public class ArticuloDTO {
         this.descripcion = descripcion;
     }
 
-    public String getUsuarioId() {
+    public ObjectId getUsuarioId() {
         return usuarioId;
     }
 
-    public void setUsuarioId(String usuarioId) {
+    public void setUsuarioId(ObjectId usuarioId) {
         this.usuarioId = usuarioId;
     }
 
-    public String getCategoriaId() {
+    public ObjectId getCategoriaId() {
         return categoriaId;
     }
 
-    public void setCategoriaId(String categoriaId) {
+    public void setCategoriaId(ObjectId categoriaId) {
         this.categoriaId = categoriaId;
     }
 
