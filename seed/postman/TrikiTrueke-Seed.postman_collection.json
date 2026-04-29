@@ -1,0 +1,232 @@
+{
+  "info": {
+    "name": "TrikiTrueke Seed",
+    "_postman_id": "f25b675e-b2c8-4253-b64b-9b5ca801f5f2",
+    "description": "Seed de datos base para TrikiTrueke. Ejecutar en orden con Collection Runner.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "01 - Registrar Usuario 1",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Seed Usuario 1\",\n  \"email\": \"seed.user1.{{seedTag}}@trikitrueke.local\",\n  \"telefono\": \"300111{{seedTag}}\",\n  \"clave\": \"SeedPass123\"\n}"
+        },
+        "url": "{{baseUrl}}/usuarios"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 201', function () {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('user1Id', json.data.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "02 - Registrar Usuario 2",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Seed Usuario 2\",\n  \"email\": \"seed.user2.{{seedTag}}@trikitrueke.local\",\n  \"telefono\": \"300222{{seedTag}}\",\n  \"clave\": \"SeedPass123\"\n}"
+        },
+        "url": "{{baseUrl}}/usuarios"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 201', function () {",
+              "  pm.response.to.have.status(201);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('user2Id', json.data.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "03 - Login Usuario 1 (sesion)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"seed.user1.{{seedTag}}@trikitrueke.local\",\n  \"clave\": \"SeedPass123\"\n}"
+        },
+        "url": "{{baseUrl}}/api/auth/login"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "04 - Crear Categoria",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nombre\": \"Tecnologia {{seedTag}}\",\n  \"descripcion\": \"Categoria seed de tecnologia\"\n}"
+        },
+        "url": "{{baseUrl}}/categorias"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('categoriaId', json.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "05 - Crear Articulo Ofrecido (Usuario 1)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Teclado mecanico {{seedTag}}\",\n  \"descripcion\": \"Articulo ofrecido en seed\",\n  \"usuarioId\": \"{{user1Id}}\",\n  \"categoriaId\": \"{{categoriaId}}\",\n  \"fotos\": [\n    \"https://picsum.photos/seed/ofrecido{{seedTag}}/640/480\"\n  ]\n}"
+        },
+        "url": "{{baseUrl}}/articulos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('articuloOfrecidoId', json.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "06 - Crear Articulo Recibido (Usuario 2)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"titulo\": \"Mouse gamer {{seedTag}}\",\n  \"descripcion\": \"Articulo recibido en seed\",\n  \"usuarioId\": \"{{user2Id}}\",\n  \"categoriaId\": \"{{categoriaId}}\",\n  \"fotos\": [\n    \"https://picsum.photos/seed/recibido{{seedTag}}/640/480\"\n  ]\n}"
+        },
+        "url": "{{baseUrl}}/articulos"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('articuloRecibidoId', json.id);"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "07 - Crear Intercambio",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"articuloOfrecido\": \"{{articuloOfrecidoId}}\",\n  \"articuloRecibido\": \"{{articuloRecibidoId}}\",\n  \"usuarioOfrece\": \"{{user1Id}}\",\n  \"usuarioRecibe\": \"{{user2Id}}\"\n}"
+        },
+        "url": "{{baseUrl}}/intercambios"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status 200', function () {",
+              "  pm.response.to.have.status(200);",
+              "});",
+              "const json = pm.response.json();",
+              "pm.environment.set('intercambioId', json.id);"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

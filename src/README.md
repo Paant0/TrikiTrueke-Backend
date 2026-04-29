@@ -1,6 +1,6 @@
 # TrikiTrueke Backend (src)
 
-Backend de TrikiTrueke con Spring Boot, MongoDB y autenticacion con Spring Security basada en sesion (`JSESSIONID`), sin JWT.
+Backend de TrikiTrueke con Spring Boot, MongoDB y autenticación con Spring Security basada en sesion (`JSESSIONID`), sin JWT.
 
 ## Stack
 
@@ -11,7 +11,7 @@ Backend de TrikiTrueke con Spring Boot, MongoDB y autenticacion con Spring Secur
 - Spring Security
 - Lombok
 
-## Ejecucion
+## Ejecución
 
 Requiere MongoDB en `localhost:27017` (BD: `TrikiTrueke`).
 
@@ -54,15 +54,15 @@ src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/
     CategoriaDTO.java
 ```
 
-## Flujo de autenticacion (actual)
+## Flujo de autenticación (actual)
 
 ### Registro
 
 - `POST /auth/register` (alterno legado: `POST /usuarios`)
 - Crea usuario en Mongo
 - Validaciones:
-  - email obligatorio y con formato valido
-  - telefono obligatorio
+  - email obligatorio y con formato válido
+  - teléfono obligatorio
   - clave obligatoria
   - email/telefono unicos
 - Clave cifrada con BCrypt
@@ -71,7 +71,7 @@ src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/
 
 - `POST /auth/login` (alterno legado: `POST /usuarios/login`)
 - Autentica con `AuthenticationManager` + `CustomUserDetailsService`
-- Si es exitoso, guarda `SecurityContext` en sesion HTTP (`JSESSIONID`)
+- Si es exitoso, guarda `SecurityContext` en sesión HTTP (`JSESSIONID`)
 
 ### Sesion y perfil
 
@@ -106,7 +106,7 @@ src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/
 - `POST /auth/logout`
 - `GET /auth/me`
 
-### Articulos
+### Artículos
 
 - `GET /articulos`
 - `GET /articulos/{id}`
@@ -131,19 +131,19 @@ src/main/java/com/example/BackEnd/TrikiTrueke_BackEnd/
 
 ## Reglas de negocio implementadas
 
-- Al crear articulo (`POST /articulos`):
+- Al crear artículo (`POST /articulos`):
   - `usuarioId` obligatorio
-  - valida existencia del usuario
+  - válida existencia del usuario
   - estado automatico: `DISPONIBLE`
 
 - Al crear intercambio (`POST /intercambios`):
   - `articuloOfrecido` obligatorio
   - `usuarioOfrece` obligatorio
-  - valida existencia del articulo ofrecido
-  - valida que el articulo ofrecido pertenezca al `usuarioOfrece`
+  - válida existencia del artículo ofrecido
+  - válida que el artículo ofrecido pertenezca al `usuarioOfrece`
   - estado automatico: `PENDIENTE`
 
-## Configuracion
+## Configuración
 
 `src/main/resources/application.properties`:
 
@@ -156,4 +156,4 @@ spring.data.mongodb.auto-index-creation=true
 
 ## Testing
 
-Actualmente existe prueba basica de carga de contexto. Aun no hay suite de pruebas de integracion para auth/usuarios/articulos/intercambios.
+Actualmente, existe prueba básica de carga de contexto. Aun no hay suite de pruebas de integración para auth/usuarios/articulos/intercambios.

@@ -1,5 +1,6 @@
 package com.Example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
+import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -7,36 +8,39 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.time.Instant;
-import java.util.LinkedHashMap;
-import java.util.Map;
-
 @RestControllerAdvice
 public class GlobalExceptionHandler {
     @ExceptionHandler(ResponseStatusException.class)
-    public ResponseEntity<Map<String, Object>> handleResponseStatusException(
+    public ResponseEntity<ApiResponse<Object>> handleResponseStatusException(
             ResponseStatusException ex,
             HttpServletRequest request
     ) {
         int status = ex.getStatusCode().value();
-        String error;
-        if (ex.getStatusCode() instanceof HttpStatus) {
-            error = ((HttpStatus) ex.getStatusCode()).getReasonPhrase();
-        } else {
-            error = "Unknown Status";
-        }
         String message = ex.getReason();
         if (message == null || message.isBlank()) {
             message = "Error inesperado";
         }
 
-        Map<String, Object> body = new LinkedHashMap<>();
-        body.put("timestamp", Instant.now().toString());
-        body.put("status", status);
-        body.put("error", error);
-        body.put("message", message);
-        body.put("path", request.getRequestURI());
+        ApiResponse<Object> body = new ApiResponse<>(
+                false,
+                status,
+                message,
+                null,
+                request.getRequestURI()
+        );
 
         return ResponseEntity.status(status).body(body);
+    }
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponse<Object>> handleGenericException(HttpServletRequest request) {
+        ApiResponse<Object> body = new ApiResponse<>(
+                false,
+                HttpStatus.INTERNAL_SERVER_ERROR.value(),
+                "Error interno del servidor",
+                null,
+                request.getRequestURI()
+        );
+        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(body);
     }
 }
