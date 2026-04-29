@@ -23,27 +23,42 @@ public class IntercambioService {
 
     //Create
     public IntercambioDTO create(IntercambioDTO intercambioDTO) {
-        if (intercambioDTO.getArticuloOfrecido() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "articuloOfrecido es obligatorio");
-        }
-        if (intercambioDTO.getUsuarioOfrece() == null) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "usuarioOfrece es obligatorio");
-        }
+        try {
+            if (intercambioDTO.getArticuloOfrecido() == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "articuloOfrecido es obligatorio");
+            }
+            if (intercambioDTO.getArticuloRecibido() == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "articuloRecibido es obligatorio");
+            }
+            if (intercambioDTO.getUsuarioOfrece() == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "usuarioOfrece es obligatorio");
+            }
+            if (intercambioDTO.getUsuarioRecibe() == null) {
+                throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "usuarioRecibe es obligatorio");
+            }
 
-        ArticuloDTO articuloOfrecido = articuloRepository.findById(intercambioDTO.getArticuloOfrecido().toHexString())
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "El articulo ofrecido no existe"));
+            ArticuloDTO articuloOfrecido = articuloRepository.findById(intercambioDTO.getArticuloOfrecido().toHexString())
+                    .orElseThrow(() -> new ResponseStatusException(HttpStatus.BAD_REQUEST, "El articulo ofrecido no existe"));
 
-        if (articuloOfrecido.getUsuarioId() == null ||
-                !articuloOfrecido.getUsuarioId().equals(intercambioDTO.getUsuarioOfrece())) {
+            if (articuloOfrecido.getUsuarioId() == null ||
+                    !articuloOfrecido.getUsuarioId().equals(intercambioDTO.getUsuarioOfrece())) {
+                throw new ResponseStatusException(
+                        HttpStatus.BAD_REQUEST,
+                        "El articulo ofrecido no pertenece al usuario que ofrece el intercambio"
+                );
+            }
+
+            intercambioDTO.setCreadoEn(new Date());
+            intercambioDTO.setEstado("PENDIENTE");
+            return repository.save(intercambioDTO);
+        } catch (ResponseStatusException ex) {
+            throw ex;
+        } catch (Exception ex) {
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,
-                    "El articulo ofrecido no pertenece al usuario que ofrece el intercambio"
+                    "Datos invalidos para crear intercambio: " + ex.getMessage()
             );
         }
-
-        intercambioDTO.setCreadoEn(new Date());
-        intercambioDTO.setEstado("PENDIENTE");
-        return repository.save(intercambioDTO);
     }
     //Get all
     public List<IntercambioDTO> getAll() {
