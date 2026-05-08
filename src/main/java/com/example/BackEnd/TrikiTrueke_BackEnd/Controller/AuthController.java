@@ -20,6 +20,7 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:4200")
 @RequestMapping("/api/auth")
 public class AuthController {
     private final UsuarioService usuarioService;
