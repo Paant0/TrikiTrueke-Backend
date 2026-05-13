@@ -1,0 +1,22 @@
+$kind: http-request
+name: Usuarios
+url: http://localhost:8081/usuarios
+method: GET
+body:
+  type: json
+  content: "{\r
+
+    \    \"correo\": \"test@mail.com\",\r
+
+    \    \"nombres\": \"Juan\",\r
+
+    \    \"apellidos\": \"Perez\",\r
+
+    \    \"password\": \"123456\",\r
+
+    \    \"rol\": \"USER\",\r
+
+    \    \"estado\": true\r
+
+    }"
+order: 1776641621626

@@ -1,0 +1,20 @@
+$kind: http-request
+name: Intercambios
+url: http://localhost:8080/intercambios
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"articuloOfrecido\": \"69f27660d36fff5c47e3e796\",\r
+
+    \  \"articuloRecibido\": \"69e013c63efd645da480d290\",\r
+
+    \  \"usuarioOfrece\": \"69f275dcd36fff5c47e3e793\",\r
+
+    \  \"usuarioRecibe\": \"69f275f9d36fff5c47e3e794\"\r
+
+    \r
+
+    \  }"
+order: 4155531155026637

@@ -1,0 +1,16 @@
+Index: src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java b/src/test/java/com/Example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java
+rename from src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java
+rename to src/test/java/com/Example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java
+--- a/src/test/java/com/example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java	(revision 96356c21fd6b967aac5d4a4bc1413984a791716e)
++++ b/src/test/java/com/Example/BackEnd/TrikiTrueke_BackEnd/TrikiTruekeBackEndApplicationTests.java	(date 1778104163221)
+@@ -1,4 +1,4 @@
+-package com.example.BackEnd.TrikiTrueke_BackEnd;
++package com.Example.BackEnd.TrikiTrueke_BackEnd;
+ 
+ import org.junit.jupiter.api.Test;
+ import org.springframework.boot.test.context.SpringBootTest;

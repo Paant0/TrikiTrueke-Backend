@@ -1,7 +1,7 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Service;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
 
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.CategoriaRepository;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.CategoriaRepository;
 
 import java.util.List;
 

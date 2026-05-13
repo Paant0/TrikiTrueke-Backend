@@ -1,0 +1,13 @@
+{
+  "id": "9a5d4461-7d1f-4e49-a0d4-3a2b0b3bce10",
+  "version": 1,
+  "name": "External Endpoints Mock",
+  "protocol": "http",
+  "port": 4600,
+  "mockSrc": "./external-endpoints-mock.js",
+  "autoRestartOnChange": true,
+  "logging": {
+    "level": "verbose",
+    "showBody": true
+  }
+}

@@ -1,0 +1,210 @@
+Index: .idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<dataSource name=\"TrikiTrueke@localhost\">\r\n  <database-model serializer=\"dbm\" dbms=\"MONGO\" family-id=\"MONGO\" format-version=\"4.54\">\r\n    <root id=\"1\">\r\n      <ServerVersion>8.2.0</ServerVersion>\r\n    </root>\r\n    <schema id=\"2\" parent=\"1\" name=\"TrikiTrueke\">\r\n      <Current>1</Current>\r\n      <LastIntrospectionLocalTimestamp>2026-04-29.15:25:34</LastIntrospectionLocalTimestamp>\r\n    </schema>\r\n    <schema id=\"3\" parent=\"1\" name=\"admin\"/>\r\n    <schema id=\"4\" parent=\"1\" name=\"config\"/>\r\n    <schema id=\"5\" parent=\"1\" name=\"local\"/>\r\n    <table id=\"6\" parent=\"2\" name=\"Articulos\"/>\r\n    <table id=\"7\" parent=\"2\" name=\"Categorias\"/>\r\n    <table id=\"8\" parent=\"2\" name=\"Intercambios\"/>\r\n    <table id=\"9\" parent=\"2\" name=\"Usuarios\"/>\r\n    <column id=\"10\" parent=\"6\" name=\"_id\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"11\" parent=\"6\" name=\"_class\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"12\" parent=\"6\" name=\"categoriaId\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"13\" parent=\"6\" name=\"creadoEn\">\r\n      <Position>1</Position>\r\n      <StoredType>ISODate|91s</StoredType>\r\n    </column>\r\n    <column id=\"14\" parent=\"6\" name=\"descripcion\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"15\" parent=\"6\" name=\"estado\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"16\" parent=\"6\" name=\"titulo\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"17\" parent=\"6\" name=\"fotos\">\r\n      <Position>2</Position>\r\n      <StoredType>Array|2003s</StoredType>\r\n    </column>\r\n    <column id=\"18\" parent=\"6\" name=\"usuarioId\">\r\n      <Position>2</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <index id=\"19\" parent=\"6\" name=\"_id_\">\r\n      <ColNames>_id</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <column id=\"20\" parent=\"7\" name=\"_id\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"21\" parent=\"7\" name=\"_class\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"22\" parent=\"7\" name=\"descripcion\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"23\" parent=\"7\" name=\"nombre\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <index id=\"24\" parent=\"7\" name=\"_id_\">\r\n      <ColNames>_id</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <column id=\"25\" parent=\"8\" name=\"_id\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"26\" parent=\"8\" name=\"articuloOfrecido\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"27\" parent=\"8\" name=\"creadoEn\">\r\n      <Position>1</Position>\r\n      <StoredType>ISODate|91s</StoredType>\r\n    </column>\r\n    <column id=\"28\" parent=\"8\" name=\"estado\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"29\" parent=\"8\" name=\"usuarioOfrece\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"30\" parent=\"8\" name=\"_class\">\r\n      <Position>2</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"31\" parent=\"8\" name=\"articuloRecibido\">\r\n      <Position>2</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"32\" parent=\"8\" name=\"usuarioRecibe\">\r\n      <Position>2</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <index id=\"33\" parent=\"8\" name=\"_id_\">\r\n      <ColNames>_id</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <column id=\"34\" parent=\"9\" name=\"_id\">\r\n      <Position>1</Position>\r\n      <StoredType>ObjectId|12s</StoredType>\r\n    </column>\r\n    <column id=\"35\" parent=\"9\" name=\"_class\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"36\" parent=\"9\" name=\"clave\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"37\" parent=\"9\" name=\"creadoEn\">\r\n      <Position>1</Position>\r\n      <StoredType>ISODate|91s</StoredType>\r\n    </column>\r\n    <column id=\"38\" parent=\"9\" name=\"email\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"39\" parent=\"9\" name=\"nombre\">\r\n      <Position>1</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <column id=\"40\" parent=\"9\" name=\"telefono\">\r\n      <Position>2</Position>\r\n      <StoredType>String|12s</StoredType>\r\n    </column>\r\n    <index id=\"41\" parent=\"9\" name=\"_id_\">\r\n      <ColNames>_id</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"42\" parent=\"9\" name=\"email\">\r\n      <ColNames>email</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n    <index id=\"43\" parent=\"9\" name=\"telefono\">\r\n      <ColNames>telefono</ColNames>\r\n      <Unique>1</Unique>\r\n    </index>\r\n  </database-model>\r\n</dataSource>
+===================================================================
+diff --git a/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml b/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml
+--- a/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml	(revision 8f0a360eaba24884df260b608d79e4b71041e133)
++++ b/.idea/dataSources/fbbf33f8-6258-499a-a64d-9e617eb65097.xml	(date 1777479992785)
+@@ -6,148 +6,158 @@
+     </root>
+     <schema id="2" parent="1" name="TrikiTrueke">
+       <Current>1</Current>
+-      <LastIntrospectionLocalTimestamp>2026-04-29.15:25:34</LastIntrospectionLocalTimestamp>
++      <LastIntrospectionLocalTimestamp>2026-04-29.16:26:02</LastIntrospectionLocalTimestamp>
+     </schema>
+     <schema id="3" parent="1" name="admin"/>
+     <schema id="4" parent="1" name="config"/>
+     <schema id="5" parent="1" name="local"/>
+-    <table id="6" parent="2" name="Articulos"/>
+-    <table id="7" parent="2" name="Categorias"/>
+-    <table id="8" parent="2" name="Intercambios"/>
+-    <table id="9" parent="2" name="Usuarios"/>
+-    <column id="10" parent="6" name="_id">
++    <schema id="6" parent="1" name="nombreDB"/>
++    <schema id="7" parent="1" name="proyectoLUMO"/>
++    <table id="8" parent="2" name="Articulos"/>
++    <table id="9" parent="2" name="Categorias"/>
++    <table id="10" parent="2" name="Intercambios"/>
++    <table id="11" parent="2" name="Usuarios"/>
++    <column id="12" parent="8" name="_id">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="11" parent="6" name="_class">
++    <column id="13" parent="8" name="_class">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="12" parent="6" name="categoriaId">
++    <column id="14" parent="8" name="categoriaId">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="13" parent="6" name="creadoEn">
++    <column id="15" parent="8" name="creadoEn">
+       <Position>1</Position>
+       <StoredType>ISODate|91s</StoredType>
+     </column>
+-    <column id="14" parent="6" name="descripcion">
++    <column id="16" parent="8" name="descripcion">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="15" parent="6" name="estado">
++    <column id="17" parent="8" name="estado">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="16" parent="6" name="titulo">
++    <column id="18" parent="8" name="titulo">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="17" parent="6" name="fotos">
++    <column id="19" parent="8" name="fotos">
+       <Position>2</Position>
+       <StoredType>Array|2003s</StoredType>
+     </column>
+-    <column id="18" parent="6" name="usuarioId">
++    <column id="20" parent="8" name="usuarioId">
+       <Position>2</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <index id="19" parent="6" name="_id_">
++    <index id="21" parent="8" name="_id_">
+       <ColNames>_id</ColNames>
+       <Unique>1</Unique>
+     </index>
+-    <column id="20" parent="7" name="_id">
++    <column id="22" parent="9" name="_id">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="21" parent="7" name="_class">
++    <column id="23" parent="9" name="descripcion">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="22" parent="7" name="descripcion">
++    <column id="24" parent="9" name="nombre">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="23" parent="7" name="nombre">
+-      <Position>1</Position>
++    <column id="25" parent="9" name="_class">
++      <Position>2</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <index id="24" parent="7" name="_id_">
++    <index id="26" parent="9" name="_id_">
+       <ColNames>_id</ColNames>
+       <Unique>1</Unique>
+     </index>
+-    <column id="25" parent="8" name="_id">
++    <column id="27" parent="10" name="_id">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="26" parent="8" name="articuloOfrecido">
++    <column id="28" parent="10" name="_class">
++      <Position>1</Position>
++      <StoredType>String|12s</StoredType>
++    </column>
++    <column id="29" parent="10" name="articuloOfrecido">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="27" parent="8" name="creadoEn">
++    <column id="30" parent="10" name="creadoEn">
+       <Position>1</Position>
+       <StoredType>ISODate|91s</StoredType>
+     </column>
+-    <column id="28" parent="8" name="estado">
++    <column id="31" parent="10" name="estado">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="29" parent="8" name="usuarioOfrece">
++    <column id="32" parent="10" name="usuarioOfrece">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="30" parent="8" name="_class">
+-      <Position>2</Position>
+-      <StoredType>String|12s</StoredType>
+-    </column>
+-    <column id="31" parent="8" name="articuloRecibido">
++    <column id="33" parent="10" name="articuloRecibido">
+       <Position>2</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="32" parent="8" name="usuarioRecibe">
++    <column id="34" parent="10" name="usuarioRecibe">
+       <Position>2</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <index id="33" parent="8" name="_id_">
++    <index id="35" parent="10" name="_id_">
+       <ColNames>_id</ColNames>
+       <Unique>1</Unique>
+     </index>
+-    <column id="34" parent="9" name="_id">
++    <column id="36" parent="11" name="_id">
+       <Position>1</Position>
+       <StoredType>ObjectId|12s</StoredType>
+     </column>
+-    <column id="35" parent="9" name="_class">
++    <column id="37" parent="11" name="_class">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="36" parent="9" name="clave">
++    <column id="38" parent="11" name="clave">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="37" parent="9" name="creadoEn">
++    <column id="39" parent="11" name="creadoEn">
+       <Position>1</Position>
+       <StoredType>ISODate|91s</StoredType>
+     </column>
+-    <column id="38" parent="9" name="email">
++    <column id="40" parent="11" name="email">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="39" parent="9" name="nombre">
++    <column id="41" parent="11" name="nombre">
+       <Position>1</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <column id="40" parent="9" name="telefono">
++    <column id="42" parent="11" name="role">
+       <Position>2</Position>
+       <StoredType>String|12s</StoredType>
+     </column>
+-    <index id="41" parent="9" name="_id_">
++    <column id="43" parent="11" name="role: ">
++      <Position>3</Position>
++      <StoredType>String|12s</StoredType>
++    </column>
++    <column id="44" parent="11" name="telefono">
++      <Position>4</Position>
++      <StoredType>String|12s</StoredType>
++    </column>
++    <index id="45" parent="11" name="_id_">
+       <ColNames>_id</ColNames>
+       <Unique>1</Unique>
+     </index>
+-    <index id="42" parent="9" name="email">
++    <index id="46" parent="11" name="email">
+       <ColNames>email</ColNames>
+       <Unique>1</Unique>
+     </index>
+-    <index id="43" parent="9" name="telefono">
++    <index id="47" parent="11" name="telefono">
+       <ColNames>telefono</ColNames>
+       <Unique>1</Unique>
+     </index>

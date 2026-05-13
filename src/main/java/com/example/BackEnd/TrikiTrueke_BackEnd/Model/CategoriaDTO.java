@@ -1,4 +1,4 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Model;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,17 +10,17 @@ public class CategoriaDTO {
     private String id;
     private String nombre;
     private String descripcion;
+    private String imagen;
 
     public CategoriaDTO() {
     }
 
-    public CategoriaDTO(String id, String nombre, String descripcion) {
+    public CategoriaDTO(String id, String nombre, String descripcion, String imagen) {
         this.id = id;
         this.nombre = nombre;
         this.descripcion = descripcion;
+        this.imagen = imagen;
     }
-
-
     public String getId() {
         return id;
     }
@@ -43,5 +43,13 @@ public class CategoriaDTO {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(String imagen) {
+        this.imagen = imagen;
     }
 }

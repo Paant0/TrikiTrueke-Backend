@@ -1,7 +1,7 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Service;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Service;
 
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Repository.UsuarioRepository;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.UsuarioDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Repository.UsuarioRepository;
 import org.springframework.dao.DuplicateKeyException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.GrantedAuthority;

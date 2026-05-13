@@ -1,0 +1,23 @@
+$kind: http-request
+name: Usuarios
+url: http://localhost:8080/api/auth/register
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \    \"nombre\": \"Prueba2 \",\r
+
+    \    \"email\": \"Prueba2@test.com\",\r
+
+    \    \"telefono\": \"30098873\",\r
+
+    \    \"clave\": \"123456\"\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: hervindc15@gmail.com
+    password: "123456"
+order: 1000

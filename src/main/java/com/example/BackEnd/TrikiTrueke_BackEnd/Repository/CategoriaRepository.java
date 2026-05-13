@@ -3,9 +3,9 @@
 // (powered by Fernflower decompiler)
 //
 
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Repository;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Repository;
 
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

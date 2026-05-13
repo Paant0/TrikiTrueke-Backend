@@ -1,6 +1,6 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Controller;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.ApiResponse;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ApiResponse;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

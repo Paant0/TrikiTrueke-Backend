@@ -1,33 +1,24 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Controller;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
-import com.Example.BackEnd.TrikiTrueke_BackEnd.Service.CategoriaService;
-
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.CategoriaDTO;
+import com.example.BackEnd.TrikiTrueke_BackEnd.Service.CategoriaService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/categorias")
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/categorias")
 public class CategoriaController {
 
-    @Autowired
-    private CategoriaService service;
+    private final CategoriaService categoriaService;
+
+    public CategoriaController(CategoriaService categoriaService) {
+        this.categoriaService = categoriaService;
+    }
 
     @GetMapping
-    public List<CategoriaDTO> listar() {
-        return service.getCategorias();
+    public List<CategoriaDTO> obtenerCategorias() {
+        return categoriaService.getCategorias();
     }
-
-    @GetMapping("/{id}")
-    public CategoriaDTO obtener(@PathVariable String id) {
-        return service.getCategoriaById(id);
-    }
-    @PostMapping
-    public CategoriaDTO crear(@RequestBody CategoriaDTO CategoriaDTO) {
-        return service.crear(CategoriaDTO);
-    }
-
 }

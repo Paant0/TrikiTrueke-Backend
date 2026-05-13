@@ -1,0 +1,27 @@
+$kind: http-request
+name: Juegos
+url: http://localhost:8081/usuarios/69ec3bac89e3120aac67124d
+method: DELETE
+body:
+  type: json
+  content: "{\r
+
+    \  \"correo\": \"admin@mail.com\",\r
+
+    \  \"nombres\": \"Admin\",\r
+
+    \  \"apellidos\": \"Principal\",\r
+
+    \  \"password\": \"123456\",\r
+
+    \  \"rol\": \"ADMIN\",\r
+
+    \  \"estado\": true\r
+
+    }"
+auth:
+  type: basic
+  credentials:
+    username: karla.silva@gmail.com
+    password: "123456"
+order: 1473977190786445

@@ -1,4 +1,4 @@
-package com.Example.BackEnd.TrikiTrueke_BackEnd.Model;
+package com.example.BackEnd.TrikiTrueke_BackEnd.Model;
 
 import java.time.Instant;
 
