@@ -20,7 +20,7 @@
           "mode": "raw",
           "raw": "{\n  \"nombre\": \"Seed Usuario 1\",\n  \"email\": \"seed.user1.{{seedTag}}@trikitrueke.local\",\n  \"telefono\": \"300111{{seedTag}}\",\n  \"clave\": \"SeedPass123\"\n}"
         },
-        "url": "{{baseUrl}}/usuarios"
+        "url": "{{baseUrl}}/api/auth/register"
       },
       "event": [
         {
@@ -32,7 +32,7 @@
               "  pm.response.to.have.status(201);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('user1Id', json.data.id);"
+              "pm.environment.set('user1Id', json.id);"
             ]
           }
         }
@@ -52,7 +52,7 @@
           "mode": "raw",
           "raw": "{\n  \"nombre\": \"Seed Usuario 2\",\n  \"email\": \"seed.user2.{{seedTag}}@trikitrueke.local\",\n  \"telefono\": \"300222{{seedTag}}\",\n  \"clave\": \"SeedPass123\"\n}"
         },
-        "url": "{{baseUrl}}/usuarios"
+        "url": "{{baseUrl}}/api/auth/register"
       },
       "event": [
         {
@@ -64,7 +64,7 @@
               "  pm.response.to.have.status(201);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('user2Id', json.data.id);"
+              "pm.environment.set('user2Id', json.id);"
             ]
           }
         }
@@ -137,7 +137,7 @@
               "  pm.response.to.have.status(200);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('categoriaId', json.id);"
+              "pm.environment.set('categoriaId', json.data.id);"
             ]
           }
         }
@@ -173,7 +173,7 @@
               "  pm.response.to.have.status(200);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('articuloOfrecidoId', json.id);"
+              "pm.environment.set('articuloOfrecidoId', json.data.id);"
             ]
           }
         }
@@ -209,7 +209,7 @@
               "  pm.response.to.have.status(200);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('articuloRecibidoId', json.id);"
+              "pm.environment.set('articuloRecibidoId', json.data.id);"
             ]
           }
         }
@@ -245,7 +245,7 @@
               "  pm.response.to.have.status(200);",
               "});",
               "const json = pm.response.json();",
-              "pm.environment.set('intercambioId', json.id);"
+              "pm.environment.set('intercambioId', json.data.id);"
             ]
           }
         }
