@@ -76,4 +76,35 @@ public class AuthController {
     public ResponseEntity<UsuarioDTO> me(Authentication authentication) {
         return ResponseEntity.ok(usuarioService.getUsuarioByEmail(authentication.getName()));
     }
+
+    @PutMapping("/me")
+    public ResponseEntity<UsuarioDTO> updateMe(
+            Authentication authentication,
+            @RequestBody UsuarioDTO usuarioActualizado
+    ) {
+        UsuarioDTO usuarioActual = usuarioService.getUsuarioByEmail(authentication.getName());
+        UsuarioDTO updated = usuarioService.updateUsuario(usuarioActual.getId(), usuarioActualizado);
+        return ResponseEntity.ok(updated);
+    }
+
+    @DeleteMapping("/me")
+    public ResponseEntity<Map<String, String>> deleteMe(
+            Authentication authentication,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        UsuarioDTO usuarioActual = usuarioService.getUsuarioByEmail(authentication.getName());
+        usuarioService.deleteUsuario(usuarioActual.getId());
+
+        SecurityContextHolder.clearContext();
+        HttpSession session = request.getSession(false);
+        if (session != null) {
+            session.invalidate();
+        }
+        response.setHeader("Set-Cookie", "JSESSIONID=; Path=/; HttpOnly; Max-Age=0");
+
+        Map<String, String> body = new LinkedHashMap<>();
+        body.put("message", "Usuario eliminado correctamente");
+        return ResponseEntity.ok(body);
+    }
 }

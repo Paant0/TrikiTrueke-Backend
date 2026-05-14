@@ -76,24 +76,6 @@ public class UsuarioService implements UserDetailsService {
         }
     }
 
-    public UsuarioDTO validarLogin(String email, String clave) {
-        if (email == null || email.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email es obligatorio");
-        }
-        if (!EMAIL_PATTERN.matcher(email).matches()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Formato de email invalido");
-        }
-        if (clave == null || clave.isBlank()) {
-            throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Clave es obligatoria");
-        }
-        UsuarioDTO usuario = usuarioRepository.findByEmail(email)
-                .orElseThrow(() -> new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales invalidas"));
-        if (!passwordEncoder.matches(clave, usuario.getClave())) {
-            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Credenciales invalidas");
-        }
-        return usuario;
-    }
-
     public UsuarioDTO updateUsuario(String id, UsuarioDTO usuarioActualizado) {
         UsuarioDTO usuarioExistente = usuarioRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Usuario no encontrado: " + id));

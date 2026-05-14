@@ -1,43 +1,44 @@
 package com.example.BackEnd.TrikiTrueke_BackEnd.Controller;
 
+import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ApiResponse;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Model.ArticuloDTO;
 import com.example.BackEnd.TrikiTrueke_BackEnd.Service.ArticuloService;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/articulos")
-@CrossOrigin(origins = "http://localhost:4200")
 public class ArticuloController {
+    private final ArticuloService service;
 
-    @Autowired
-    private ArticuloService service;
+    public ArticuloController(ArticuloService service) {
+        this.service = service;
+    }
 
     @PostMapping
-    public ArticuloDTO crear(@RequestBody ArticuloDTO articulo) {
-        return service.crear(articulo);
+    public ApiResponse<ArticuloDTO> crear(@RequestBody ArticuloDTO articulo) {
+        return new ApiResponse<>(true, 201, "Artículo creado correctamente", service.crear(articulo), "/articulos");
     }
 
     @GetMapping
-    public List<ArticuloDTO> obtenerTodos() {
-        return service.obtenerTodos();
+    public ApiResponse<List<ArticuloDTO>> obtenerTodos() {
+        return new ApiResponse<>(true, 200, "Artículos obtenidos correctamente", service.obtenerTodos(), "/articulos");
     }
 
     @GetMapping("/{id}")
-    public ArticuloDTO obtenerPorId(@PathVariable String id) {
-        return service.obtenerPorId(id);
+    public ApiResponse<ArticuloDTO> obtenerPorId(@PathVariable String id) {
+        return new ApiResponse<>(true, 200, "Artículo obtenido correctamente", service.obtenerPorId(id), "/articulos/" + id);
     }
 
     @PutMapping("/{id}")
-    public ArticuloDTO actualizar(@PathVariable String id, @RequestBody ArticuloDTO articulo) {
-        return service.actualizar(id, articulo);
+    public ApiResponse<ArticuloDTO> actualizar(@PathVariable String id, @RequestBody ArticuloDTO articulo) {
+        return new ApiResponse<>(true, 200, "Artículo actualizado correctamente", service.actualizar(id, articulo), "/articulos/" + id);
     }
 
     @DeleteMapping("/{id}")
-    public void eliminar(@PathVariable String id) {
+    public ApiResponse<Void> eliminar(@PathVariable String id) {
         service.eliminar(id);
+        return new ApiResponse<>(true, 204, "Artículo eliminado correctamente", null, "/articulos/" + id);
     }
 }

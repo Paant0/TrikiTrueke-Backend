@@ -32,4 +32,28 @@ public class CategoriaService {
     public CategoriaDTO crear(CategoriaDTO categoria) {
         return categoriaRepository.save(categoria);
     }
+
+    public CategoriaDTO actualizar(String id, CategoriaDTO categoria) {
+        CategoriaDTO existente = categoriaRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Categoría no encontrada: " + id
+                ));
+        if (categoria.getNombre() != null) {
+            existente.setNombre(categoria.getNombre());
+        }
+        if (categoria.getDescripcion() != null) {
+            existente.setDescripcion(categoria.getDescripcion());
+        }
+        return categoriaRepository.save(existente);
+    }
+
+    public void eliminar(String id) {
+        CategoriaDTO existente = categoriaRepository.findById(id)
+                .orElseThrow(() -> new ResponseStatusException(
+                        HttpStatus.NOT_FOUND,
+                        "Categoría no encontrada: " + id
+                ));
+        categoriaRepository.delete(existente);
+    }
 }
