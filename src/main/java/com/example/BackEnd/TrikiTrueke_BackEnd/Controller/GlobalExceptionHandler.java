@@ -20,10 +20,7 @@ public class GlobalExceptionHandler {
             HttpServletRequest request
     ) {
         int status = ex.getStatusCode().value();
-        String message = ex.getReason();
-        if (message == null || message.isBlank()) {
-            message = "Error inesperado";
-        }
+        String message = resolveMessage(ex);
 
         ApiResponse<Object> body = new ApiResponse<>(
                 false,
@@ -37,11 +34,14 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Object>> handleGenericException(HttpServletRequest request) {
+    public ResponseEntity<ApiResponse<Object>> handleGenericException(
+            Exception ex,
+            HttpServletRequest request
+    ) {
         ApiResponse<Object> body = new ApiResponse<>(
                 false,
                 HttpStatus.INTERNAL_SERVER_ERROR.value(),
-                "Error interno del servidor",
+                resolveMessage(ex),
                 null,
                 request.getRequestURI()
         );
@@ -56,7 +56,7 @@ public class GlobalExceptionHandler {
         ApiResponse<Object> body = new ApiResponse<>(
                 false,
                 HttpStatus.BAD_REQUEST.value(),
-                "JSON invalido o tipo de dato incorrecto en el body",
+                resolveMessage(ex),
                 ex.getMostSpecificCause() != null ? ex.getMostSpecificCause().getMessage() : ex.getMessage(),
                 request.getRequestURI()
         );
@@ -71,7 +71,7 @@ public class GlobalExceptionHandler {
         ApiResponse<Object> body = new ApiResponse<>(
                 false,
                 HttpStatus.UNAUTHORIZED.value(),
-                "Credenciales invalidas",
+                resolveMessage(ex),
                 null,
                 request.getRequestURI()
         );
@@ -86,10 +86,18 @@ public class GlobalExceptionHandler {
         ApiResponse<Object> body = new ApiResponse<>(
                 false,
                 HttpStatus.BAD_REQUEST.value(),
-                "Dato invalido en la solicitud",
+                resolveMessage(ex),
                 ex.getMessage(),
                 request.getRequestURI()
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(body);
+    }
+
+    private String resolveMessage(Exception ex) {
+        String message = ex.getMessage();
+        if (message == null || message.isBlank()) {
+            return "Error inesperado";
+        }
+        return message;
     }
 }
